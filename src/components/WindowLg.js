@@ -4,12 +4,36 @@ import SignIn from './SignIn';
 import './WindowLg.css';
 import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
+import ForgotPass from './ForgotPass';
 
 function WindowLg({login,close}) {
-    const [signIn,setSignIn] = useState(true);
+    const [sign_in, setSignIn] = useState(true);
+    const [sign_up, setSignUp] = useState(false);
+    const [forgot, setForgot] = useState(false);
+
     const signInClick = () => {
-        setSignIn(!signIn)
+        setSignIn(true)
+        setSignUp(false)
+        setForgot(false)
     }
+
+    const signUpClick = () => {
+        setSignIn(false)
+        setSignUp(true)
+        setForgot(false)
+    }
+
+    const forgotClick = () => {
+        setSignIn(false)
+        setSignUp(false)
+        setForgot(true)
+    }
+
+    useEffect(() => {
+        if(!login){
+            signInClick();
+        }
+      });
 
     return (
         <div className={login ? 'activeWindow' : 'nonActiveWindow'}>
@@ -20,11 +44,14 @@ function WindowLg({login,close}) {
                             <CloseIcon/>
                         </Link>
                     </div>
-                    <div className={signIn ? 'nonActivesignUp' : 'activesignUp'}>
-                        <SignUp clickToSignIn={signInClick}/>
+                    <div className={sign_up ? 'activesignUp' : 'nonActivesignUp'}>
+                        <SignUp clickToSignIn={signInClick} clickToForgot={forgotClick}/>
                     </div>
-                    <div className={signIn ? 'activesignIn' : 'nonActivesignIn'}>
-                        <SignIn clickToSignUp={signInClick}/>
+                    <div className={sign_in ? 'activesignIn' : 'nonActivesignIn'}>
+                        <SignIn clickToSignUp={signUpClick} clickToForgot={forgotClick}/>
+                    </div>
+                    <div className={forgot ? 'activeforgot' : 'nonActiveforgot'}>
+                        <ForgotPass clickToSignUp={signUpClick} clickToSignIn={signInClick}/>
                     </div>
                 </div>
             </div>

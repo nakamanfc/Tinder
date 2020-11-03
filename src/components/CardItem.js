@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function CardItem(props) {
-    if(props.label == 'Tinder Gold'){
+    if(props.label == 'Tinduet Gold'){
         return (
             <>
                 <li className="cards__item">
@@ -17,7 +17,7 @@ function CardItem(props) {
                 </li>
             </>
         )
-    } else if(props.label == 'Tinder Plus'){
+    } else if(props.label == 'Tinduet Plus'){
         return (
             <>
                 <li className="cards__item">

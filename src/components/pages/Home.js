@@ -1,15 +1,17 @@
 import React from 'react'
 import '../../App.css'
 import Cards from '../Cards'
+import Footer from '../Footer'
 import HeroSection from '../HeroSection'
-import WindowLg from '../WindowLg'
+import Navbar from '../Navbar'
 
 function Home() {
     return(
         <>
-            {/* <WindowLg/> */}
+            <Navbar/>
             <HeroSection />
             <Cards />
+            <Footer/>
         </>
     )
 }

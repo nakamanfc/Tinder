@@ -1,0 +1,17 @@
+.menu{
+    display: block;
+    height: 100vh;
+    width: 25vw;
+}
+img{
+    width: auto;
+    height: auto;
+    display: block;
+    max-width: 25vw;
+    max-height: 100vh;
+}
+@media screen and (max-width: 960px) {
+    .menu{
+        display: none;
+    }
+}

@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp({clickToSignIn,clickToForgot}) {
+export default function ForgotPass({clickToSignUp, clickToSignIn}) {
   const classes = useStyles();
 
   return (
@@ -42,7 +42,7 @@ export default function SignUp({clickToSignIn,clickToForgot}) {
       <div className={classes.paper}>
         <Logo size='medium'/>
         <Typography component="h1" variant="h5">
-          Sign Up
+          Forgot Password
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -51,32 +51,10 @@ export default function SignUp({clickToSignIn,clickToForgot}) {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label="Enter your Email Address"
             name="email"
             autoComplete="email"
             autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="rpassword"
-            label="Re-enter your Password"
-            type="rpassword"
-            id="rpassword"
-            //autoComplete="current-password"
           />
           <Button
             type="submit"
@@ -85,17 +63,17 @@ export default function SignUp({clickToSignIn,clickToForgot}) {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Submit
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2" onClick={clickToForgot}>
-                Forgot password?
+              <Link href='#' variant="body2" onClick={clickToSignIn}>
+                Already have an account? Sign In
               </Link>
             </Grid>
             <Grid item>
-              <Link href='#' variant="body2" onClick={clickToSignIn}>
-                Already have an account? Sign In
+              <Link href="#" variant="body2" onClick={clickToSignUp}>
+                Sign Up
               </Link>
             </Grid>
           </Grid>

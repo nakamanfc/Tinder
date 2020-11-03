@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom'
-import './Navbar.css'
+import {Link} from 'react-router-dom';
+import './Navbar.css';
 import WindowLg from './WindowLg';
 import './WindowLg.css';
-import TinderButton from './TinderButton';
+import {Button} from './Button';
 import Logo1 from './Logo1';
 
 function Navbar() {
@@ -15,6 +15,7 @@ function Navbar() {
         setLogin(!login);
         window.scrollTo(0, 0);
     }
+
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -25,10 +26,6 @@ function Navbar() {
             setButton(true);
         }
     };
-
-    const backToTop = () => {
-        window.scrollTo(0, 0);
-    }
 
     useEffect(() => {
         showButton();
@@ -68,7 +65,7 @@ function Navbar() {
                             </Link>
                         </li>
                     </ul>
-                        {button && <TinderButton onClick={loginClick}>SIGN IN</TinderButton>}
+                        {button && <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'onClick={loginClick}>SIGN IN</Button>}
                 </div>
             </nav>
                 <WindowLg login={login} close={loginClick}/>

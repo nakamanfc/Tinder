@@ -4,7 +4,8 @@ import './Logo1.css'
 function Logo1() {
     return (
         <div>
-            <img src={'/images/tinderLogoWhite.png'} className='logo'/>
+            TindUET
+            {/* <img src={'/images/tinderLogoWhite.png'} className='logo1'/> */}
         </div>
     )
 }
