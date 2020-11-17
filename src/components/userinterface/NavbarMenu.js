@@ -2,15 +2,19 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './NavbarMenu.css';
 
-function NavbarMenu() {
+function NavbarMenu({messege,match,like,profile,notification,active}) {
     return (
         <div>
-            <nav className='menuNav'>
-                <Link to='/user/profile' className='menuNav__item'>Profile</Link>
-                <Link to='/user' className='menuNav__item'>Match</Link>
-                <Link to='/user/message' className='menuNav__item'>Message</Link>
+            {active?(<nav className='menuNav'>
+                <div className='menuNav__item' onClick={like}>Like</div>
+                <div className='menuNav__item' onClick={match}>Match</div>
+                <div className='menuNav__item' onClick={messege} >Message</div>
                 <div class='animation'/>
-            </nav>
+            </nav>):(<nav className='menuNav'>
+                <div className='menuNav__item1' onClick={profile}>Profile</div>
+                <div className='menuNav__item1' onClick={notification}>Notification</div>
+                <div class='animation'/>
+            </nav>)}
         </div>
     )
 }

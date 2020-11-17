@@ -22,6 +22,23 @@
     display: inline-block;
     text-align: center;
 }
+.menuNav__item:hover{
+    cursor: pointer;
+}
+.menuNav__item1 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color:  white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+.menuNav__item1:hover{
+    cursor: pointer;
+}
 .animation{
     position: absolute;
     z-index: 0;
@@ -30,6 +47,8 @@
     background:  white;
     transition: all 0.5s ease;
 }
+
+
 .menuNav__item:nth-child(1){
     width: 100px;
 }
@@ -37,18 +56,11 @@
     width: 85px;
     left: 23px;
 }
-.menuNav__item:nth-child(1):focus~.animation{
-    width: 85px;
-    left: 23px;
-}
+
 .menuNav__item:nth-child(2){
     width: 100px;
 }
 .menuNav__item:nth-child(2):hover~.animation{
-    width: 85px;
-    left: 116px;
-}
-.menuNav__item:nth-child(2):focus~.animation{
     width: 85px;
     left: 116px;
 }
@@ -59,7 +71,17 @@
     width: 85px;
     left: 212px;
 }
-.menuNav__item:nth-child(3):focus~.animation{
-    width: 85px;
-    left: 212px;
+.menuNav__item1:nth-child(1){
+    width: 140px;
+}
+.menuNav__item1:nth-child(1):hover~.animation{
+    width: 100px;
+    left: 39px;
+}
+.menuNav__item1:nth-child(2){
+    width: 140px;
+}
+.menuNav__item1:nth-child(2):hover~.animation{
+    width: 100px;
+    left: 180px;
 }

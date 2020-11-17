@@ -1,4 +1,4 @@
-.boxChat{
+.cardFriend{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,7 +7,7 @@
     border-bottom: 1px solid #fafafa;
     font-size: 12.5px;
 }
-.boxChat:hover{
+.cardFriend:hover{
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -18,20 +18,29 @@
     font-size: 12.5px;
     background-color: rgb(247, 247, 247);
 }
-.boxChat__details{
+.cardFriend__info{
+    display: flex;
+    max-width: 14vw;
+}
+.cardFriend__details{
     flex: 1;
     padding-right: 10px;
     margin-left: 10px;
     font-family: 'Open Sans', sans-serif;
 }
-.boxChat__details > p{
+.cardFriend__details > p{
     color: gray;
     font-family: 'Open Sans', sans-serif;
 }
-.boxChat__timestamp{
-    font-family: 'Open Sans', sans-serif;
-    color: lightgray;
+.cardFriend__button{
 }
-.chat__image{
+.cardFriend__image{
     margin-right: px;
+    align-self: center;
+}
+.cardFriend__superLike{
+    color: #62b4f9 !important;
+}
+.cardFriend__CloseIcon{
+    color: #ec5e6f !important;
 }

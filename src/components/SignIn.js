@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn({clickToSignUp,clickToForgot}) {
   const classes = useStyles();
+  const [ID, setID] = useState('');
 
   return (
     <Container component="main" maxWidth="xs">
@@ -55,6 +56,7 @@ export default function SignIn({clickToSignUp,clickToForgot}) {
             label="Email Address"
             name="email"
             autoComplete="email"
+            onChange={(event) => setID(event.target.value)}
             autoFocus
           />
           <TextField
@@ -69,16 +71,16 @@ export default function SignIn({clickToSignUp,clickToForgot}) {
             autoComplete="current-password"
           />
           <TinderCheckbox>Remember me</TinderCheckbox>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            href='/user'
-          >
-            Sign In
-          </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              href={`/user?id=${ID}`}
+            >
+              Sign In
+            </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2" onClick={clickToForgot}>

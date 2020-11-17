@@ -3,16 +3,13 @@ import ReplayIcon from "@material-ui/icons/Replay";
 import CloseIcon from "@material-ui/icons/Close";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import FlashOnIcon from "@material-ui/icons/FlashOn";
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from "@material-ui/core/IconButton"
 import "./SwipeButtonBar.css"
 
-function SwipeButtonBar({repeat, left, star, right, lightning}) {
+function SwipeButtonBar({left, star, right, profile}) {
     return (
         <div className= "swipeButtons">
-            <IconButton className="swipeButtons__repeat">
-                <ReplayIcon fontSize='large'/>
-            </IconButton>
             <IconButton className="swipeButtons__left" onClick={left}>
                 <CloseIcon fontSize='large'/>
             </IconButton>
@@ -22,8 +19,8 @@ function SwipeButtonBar({repeat, left, star, right, lightning}) {
             <IconButton className="swipeButtons__right" onClick={right}>
                 <FavoriteIcon fontSize='large'/>
             </IconButton>
-            <IconButton className="swipeButtons__lightning">
-                <FlashOnIcon fontSize='large'/>
+            <IconButton className="swipeButtons__lightning" onClick={profile}>
+                <MoreHorizIcon fontSize='large'/>
             </IconButton>
         </div>
     )

@@ -1,6 +1,8 @@
 import { Button } from '@material-ui/core'
 import React, {useState,useMemo} from 'react'
 import TinderCard from "react-tinder-card"
+import FriendProfile from './FriendProfile'
+import Profile from './Profile'
 import SwipeButtonBar from './SwipeButtonBar'
 import './TinderCards.css'
 
@@ -34,7 +36,7 @@ const db = [
 const alredyRemoved = []
 let charactersState = db // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
 
-function TinderCards () {
+function TinderCards ({profile}) {
   const [characters, setCharacters] = useState(db)
   const [lastDirection, setLastDirection] = useState()
 
@@ -59,7 +61,6 @@ function TinderCards () {
       const index = db.map(person => person.name).indexOf(toBeRemoved) // Find the index of which to make the reference to
       childRefs[index].current.swipe(dir) // Swipe the card!
     }
-    console.log(alredyRemoved)
   }
 
 
@@ -86,6 +87,7 @@ function TinderCards () {
                 left={() => swipe('left')}
                 right={() => swipe('right')}
                 star={() => swipe('up')}
+                profile={profile}
                 />
             </div>
         </div>
