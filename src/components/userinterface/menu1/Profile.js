@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Profile() {
+function Profile({changeProfile}) {
   const classes = useStyles();
 
   return (
@@ -46,9 +46,8 @@ function Profile() {
                 <p>Có phải bố em là dân tổ nên đã dậy em học úp vỉa vào tym anhhh.</p>
             </div>
         </div>
-
         <div className='bottom__'>
-            <div className='button__'>
+            <div className='button__' onClick={changeProfile}>
               Chỉnh sửa thông tin
             </div>
             <div className='button__'>

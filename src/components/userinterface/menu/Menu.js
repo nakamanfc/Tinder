@@ -1,12 +1,8 @@
 import React, {useState} from 'react'
 import Chat from './Chat'
 import './Menu.css'
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import ScreenChat from './ScreenChat';
-import UserInterfaceHeader from './UserInterfaceHeader';
-import NavbarMenu from './NavbarMenu';
+import NavbarMenu from '../NavbarMenu';
 import Match from './Match';
-import Scrollbars from 'react-custom-scrollbars';
 import Like from './Like';
 
 function Menu({activeScreenChat}) {
