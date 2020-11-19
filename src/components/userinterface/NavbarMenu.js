@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import './NavbarMenu.css';
 
 function NavbarMenu({messege,match,like,profile,notification,active}) {

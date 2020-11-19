@@ -1,8 +1,4 @@
 import React from 'react';
-import Badge from '@material-ui/core/Badge';
-import Avatar from '@material-ui/core/Avatar';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
 import CardFriend from './CardFriend';
 
 function Match() {

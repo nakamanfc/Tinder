@@ -28,14 +28,25 @@
     font-family: 'Open Sans', sans-serif;
 }
 .profile__avatar{
-    padding-left: 114px;
-    padding-top: 0px;
+
 }
 
 .profile__swipeButtons{
     display: flex;
     justify-content: center;
     padding-top: 25px
+}
+.profile__img{
+    padding-left: 50px;
+    display: flex;
+}
+
+.nextButton{
+    color: #6bd4fe !important;
+}
+.nextButton:hover{
+    background-color: transparent !important;
+    color: #88fcfc !important;
 }
 
 .profile__swipeButtons .MuiIconButton-root{

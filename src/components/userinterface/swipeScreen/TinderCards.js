@@ -1,8 +1,5 @@
-import { Button } from '@material-ui/core'
 import React, {useState,useMemo} from 'react'
 import TinderCard from "react-tinder-card"
-import FriendProfile from './FriendProfile'
-import Profile from './Profile'
 import SwipeButtonBar from './SwipeButtonBar'
 import './TinderCards.css'
 

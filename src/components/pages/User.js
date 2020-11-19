@@ -1,15 +1,17 @@
 import React,{useState, useEffect} from 'react'
 import UserInterfaceHeader from '../userinterface/UserInterfaceHeader'
-import TinderCards from '../userinterface/TinderCards'
-import Menu from '../userinterface/Menu'
+import TinderCards from '../userinterface/swipeScreen/TinderCards'
+import Menu from '../userinterface/menu/Menu'
 import './User.css'
 import queryString from 'query-string';
-import ScreenChat from '../userinterface/ScreenChat'
-import Menu1 from '../userinterface/Menu1'
-import FriendProfile from '../userinterface/FriendProfile'
+import ScreenChat from '../userinterface/menu/ScreenChat'
+import Menu1 from '../userinterface/menu1/Menu1'
+import FriendProfile from '../userinterface/swipeScreen/FriendProfile'
+import ChangeProfile from '../userinterface/menu1/ChangeProfile'
 
 function User({location}) {
     const[profile, setProfile] = useState(false)
+    const[changeProfile, setChangeProfile] = useState(false)
     const[name, setName] = useState('')
     const[status, setStatus] = useState('')
     const [screenChat, setScreenChat] = useState(false)
@@ -22,6 +24,15 @@ function User({location}) {
     const unactiveProfile = () =>{
         setProfile(false);
     }
+
+    const activeChangeProfile = () =>{
+        setChangeProfile(true);
+    }
+
+    const unactiveChangeProfile = () =>{
+        setChangeProfile(false);
+    }
+
     const activeScreenChat = (a,b) =>{
         setName(a)
         setStatus(b)
@@ -38,6 +49,7 @@ function User({location}) {
     return(
         <>
             {profile&&<FriendProfile unProfile={unactiveProfile}/>}
+            {changeProfile&&<ChangeProfile unProfile={unactiveChangeProfile}/>}
             <UserInterfaceHeader/>
             <div className='userDisplay'>
                 <div className='Menu'>
@@ -47,7 +59,7 @@ function User({location}) {
                     {screenChat?(<ScreenChat unActiveScreenChat={unActiveScreenChat} name={name} status={status}/>):(<TinderCards profile={activeProfile}/>)}
                 </div>
                 <div className='Menu'>
-                    <Menu1/>
+                    <Menu1 changeProfile={activeChangeProfile}/>
                 </div>
             </div>
         </>
