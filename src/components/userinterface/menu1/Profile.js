@@ -48,10 +48,10 @@ function Profile({changeProfile}) {
         </div>
         <div className='bottom__'>
             <div className='button__' onClick={changeProfile}>
-              Chỉnh sửa thông tin
+              Edit
             </div>
             <div className='button__'>
-              Đăng xuất
+              Log Out
             </div>
         </div>
     </>

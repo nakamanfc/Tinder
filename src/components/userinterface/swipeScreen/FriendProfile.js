@@ -24,7 +24,6 @@ function FriendProfile({unProfile}) {
         'https://kenh14cdn.com/2019/7/6/s11-15624058651631006795186.jpg',
         'https://kenh14cdn.com/2019/7/6/s9-15624058651551231049471.jpg',
         'https://kenh14cdn.com/2019/7/6/s13-15624058651701270275259.jpg',
-
     ])
     const[avatar, setAvatar] = useState(img[i]);
     const classes = useStyles();
