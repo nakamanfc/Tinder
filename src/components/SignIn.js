@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React ,{useState, useEffect} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -37,6 +37,19 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn({clickToSignUp,clickToForgot}) {
   const classes = useStyles();
   const [ID, setID] = useState('');
+  const [page, setPage] = useState('');
+
+  const clickSignIn = () =>{
+    if(ID == 'admin'){
+      setPage('/admin')
+    } else {
+      setPage(`/user?id=${ID}`)
+    }
+  }
+
+  useEffect(() => {
+    clickSignIn();
+  })
 
   return (
     <Container component="main" maxWidth="xs">
@@ -77,7 +90,7 @@ export default function SignIn({clickToSignUp,clickToForgot}) {
               variant="contained"
               color="primary"
               className={classes.submit}
-              href={`/user?id=${ID}`}
+              href={page}
             >
               Sign In
             </Button>

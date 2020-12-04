@@ -1,0 +1,55 @@
+.menuNav{
+    background: linear-gradient(45deg, #6bd4fe 30%, #88fcfc 90%);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 0 30px 0 30px;
+    border-bottom: 1px solid lightgray;
+}
+.menuNav__item {
+    font-size: 15px;
+    text-transform: uppercase;
+    color:  white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.menuNav__item:hover{
+    cursor: pointer;
+}
+.menuNav11{
+    background: linear-gradient(45deg, #6bd4fe 30%, #88fcfc 90%);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 0 20px 0 20px;
+    border-bottom: 1px solid lightgray;
+}
+.menuNav__item11 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color:  white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+.menuNav__item11:hover{
+    cursor: context-menu;
+}

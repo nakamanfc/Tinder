@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-import './FriendProfile.css'
+import './InfoUser.css'
 import { Link } from 'react-router-dom'
 import CloseIcon from '@material-ui/icons/Close'
 import { Avatar } from '@material-ui/core'
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import StarRateIcon from "@material-ui/icons/StarRate";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ImageIcon from '@material-ui/icons/Image';
+import ForumIcon from '@material-ui/icons/Forum';
 
 const useStyles = makeStyles((theme) => ({
     img: {
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 let i = 0;
-function FriendProfile({ unProfile }) {
+function InfoUser() {
 
     const [img, setImg] = useState([
         'https://headlineplanet.com/home/wp-content/uploads/2019/07/Lisa-Instagram-e1562252580131.jpg',
@@ -50,19 +52,8 @@ function FriendProfile({ unProfile }) {
         setAvatar(img[i]);
     }
 
-    const exit = () => {
-        i = 0;
-        unProfile();
-    }
-
     return (
-        <div className='profile__bg-modal'>
             <div className='profile__window'>
-                <div className='exitIcon' onClick={exit}>
-                    <Link>
-                        <CloseIcon />
-                    </Link>
-                </div>
                 <div className='profile__infomation'>
                     <div className='profile__img'>
                         <IconButton className="nextButton" onClick={nextImgLeft}>
@@ -85,15 +76,14 @@ function FriendProfile({ unProfile }) {
                         <CloseIcon fontSize='large' />
                     </IconButton>
                     <IconButton className="profile__swipeButtons__star">
-                        <StarRateIcon fontSize='large' />
+                        <ImageIcon fontSize='large' />
                     </IconButton>
                     <IconButton className="profile__swipeButtons__right">
-                        <FavoriteIcon fontSize='large' />
+                        <ForumIcon fontSize='large' />
                     </IconButton>
                 </div>
             </div>
-        </div>
     )
 }
 
-export default FriendProfile
+export default InfoUser
