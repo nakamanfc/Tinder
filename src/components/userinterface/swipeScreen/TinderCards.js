@@ -1,8 +1,5 @@
-import { Button } from '@material-ui/core'
-import React, {useState,useMemo} from 'react'
+import React, { useState, useMemo } from 'react'
 import TinderCard from "react-tinder-card"
-import FriendProfile from './FriendProfile'
-import Profile from './Profile'
 import SwipeButtonBar from './SwipeButtonBar'
 import './TinderCards.css'
 
@@ -36,58 +33,58 @@ const db = [
 const alredyRemoved = []
 let charactersState = db // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
 
-function TinderCards ({profile}) {
-  const [characters, setCharacters] = useState(db)
-  const [lastDirection, setLastDirection] = useState()
+function TinderCards({ profile }) {
+    const [characters, setCharacters] = useState(db)
+    const [lastDirection, setLastDirection] = useState()
 
-  const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
+    const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
 
-  const swiped = (direction, nameToDelete) => {
-    console.log(nameToDelete + ' ' + direction)
-    setLastDirection(direction)
-    alredyRemoved.push(nameToDelete)
-  }
-
-  const outOfFrame = (name) => {
-    console.log(name + ' left the screen!')
-    charactersState = charactersState.filter(character => character.name !== name)
-    setCharacters(charactersState)
-  }
-
-  const swipe = (dir) => {
-    const cardsLeft = characters.filter(person => !alredyRemoved.includes(person.name))
-    if (cardsLeft.length) {
-      const toBeRemoved = cardsLeft[cardsLeft.length - 1].name // Find the card object to be removed
-      const index = db.map(person => person.name).indexOf(toBeRemoved) // Find the index of which to make the reference to
-      childRefs[index].current.swipe(dir) // Swipe the card!
+    const swiped = (direction, nameToDelete) => {
+        console.log(nameToDelete + ' ' + direction)
+        setLastDirection(direction)
+        alredyRemoved.push(nameToDelete)
     }
-  }
+
+    const outOfFrame = (name) => {
+        console.log(name + ' left the screen!')
+        charactersState = charactersState.filter(character => character.name !== name)
+        setCharacters(charactersState)
+    }
+
+    const swipe = (dir) => {
+        const cardsLeft = characters.filter(person => !alredyRemoved.includes(person.name))
+        if (cardsLeft.length) {
+            const toBeRemoved = cardsLeft[cardsLeft.length - 1].name // Find the card object to be removed
+            const index = db.map(person => person.name).indexOf(toBeRemoved) // Find the index of which to make the reference to
+            childRefs[index].current.swipe(dir) // Swipe the card!
+        }
+    }
 
 
     return (
         <div>
             <div className="tinderCards__cardContainer">
-            {characters.map((character, index) =>(
+                {characters.map((character, index) => (
                     <TinderCard
                         ref={childRefs[index]}
                         className='swipe'
                         key={character.name}
                         onSwipe={(dir) => swiped(dir, character.name)}
                         onCardLeftScreen={() => outOfFrame(character.name)}>
-                        <div style={{backgroundImage: `url(${character.url})`}}
-                        className='card'
-                    >
+                        <div style={{ backgroundImage: `url(${character.url})` }}
+                            className='card'
+                        >
                             <div className='info'>
                                 <h3>{character.name}</h3>
                             </div>
                         </div>
                     </TinderCard>
                 ))}
-            <SwipeButtonBar
-                left={() => swipe('left')}
-                right={() => swipe('right')}
-                star={() => swipe('up')}
-                profile={profile}
+                <SwipeButtonBar
+                    left={() => swipe('left')}
+                    right={() => swipe('right')}
+                    star={() => swipe('up')}
+                    profile={profile}
                 />
             </div>
         </div>

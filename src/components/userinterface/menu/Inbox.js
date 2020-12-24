@@ -1,7 +1,6 @@
 import { Avatar } from '@material-ui/core'
 import React, {useState} from 'react'
 import './Inbox.css'
-import ScreenChat from './ScreenChat'
 
 
 function Inbox({name, timestammp, profilePic, message, activeScreenChat}){
